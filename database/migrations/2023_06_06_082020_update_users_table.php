@@ -13,7 +13,7 @@ return new class extends Migration {
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->unsignedBigInteger('unit_id')->nullable()->index('unit_id');
+         //   $table->unsignedBigInteger('unit_id')->nullable()->index('unit_id'); // cause "unit_id already exists" error for sqlite
             $table->string('identity')->nullable();
             $table->string('phone')->nullable();
             $table->boolean('is_active')->default(true);
