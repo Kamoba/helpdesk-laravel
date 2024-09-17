@@ -17,7 +17,7 @@ return new class extends Migration {
             Schema::create('tickets', function (Blueprint $table) {
                 $table->bigIncrements('id');
                 $table->unsignedBigInteger('priority_id')->index('priority_id');
-              //  $table->unsignedBigInteger('unit_id')->index('unit_id');  // cause "unit_id already exists" error for sqlite
+                $table->unsignedBigInteger('tickets_unit_id')->index('tickets_unit_id');  // cause "unit_id already exists" error for sqlite, after migration rename tickets_unit_id column to unit_id
                 $table->unsignedBigInteger('owner_id')->index('owner_id');
                 $table->unsignedBigInteger('problem_category_id')->index('problem_category_id');
                 $table->string('title');
